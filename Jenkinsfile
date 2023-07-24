@@ -5,6 +5,8 @@ pipeline{
             steps{
                 git 'https://github.com/pallapoo/estore-backend-app.git'
 
+                sh "chmod +x mvnw"
+
                 sh "./mvnw compile"
 
                 echo 'Building project using maven'
