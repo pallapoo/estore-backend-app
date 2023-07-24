@@ -5,7 +5,7 @@ pipeline{
             steps{
                 git 'https://github.com/pallapoo/estore-backend-app.git'
 
-                sh "chmod +x mvnw"
+                sh "chmod +X mvnw"
 
                 sh "./mvnw compile"
 
