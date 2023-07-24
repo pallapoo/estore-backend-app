@@ -1,32 +1,29 @@
-pipeline{
+pipeline {
     agent any
-    stages{
+    stages {
         stage('Build') {
-            steps{
+            steps {
                 git 'https://github.com/pallapoo/estore-backend-app.git'
-
-                sh "chmod +X mvnw"
-
-                sh "./mvnw compile"
-
-                echo 'Building project using maven'
+                
+                bat "mvnw compile"
+                
+                echo 'Building project using Maven'
             }
         }
-        stage('Test'){
-            steps{
-
-                sh "./mvnw test"
-
-                echo 'Testing the project with maven'
+        stage('Test') {
+            steps {
+                bat "mvnw test"
+                
+                echo 'Testing the project with Maven'
             }
         }
-        stage('Package'){
-            steps{
-
-                sh "./mvnw package"
-
-                echo 'Packaging the project with maven'
+        stage('Package') {
+            steps {
+                bat "mvnw package"
+                
+                echo 'Packaging the project with Maven'
             }
         }
     }
 }
+
